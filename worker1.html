@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline'" />
+    <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+    crossorigin="anonymous"
+  />
+    <title>UK Laxmi Jewellers Print</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Alumni+Sans+Collegiate+One&family=Satisfy&family=Yeseva+One&display=swap');
+      a {
+        text-decoration: none;
+    }
+    
+
+/* body{
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+
+} */
+body {
+    /* transform-origin: left top; */
+    transform: scaleX(-1) scaleY(-1) rotateZ(-90deg);
+    display: inline-block;
+    width: 18cm;
+    height: 23.7cm;
+  }
+a {
+  text-decoration: none!important;
+}
+/* #printjewellery {
+    width: 23.7cm;
+    height: 18cm;
+} */
+.printjewellery_wrap {
+    position: relative;
+    font-weight: 500;
+}
+#date{
+    position:absolute;
+    top: 4.7cm;
+    left: 14.5cm;
+}
+#billno{
+    position:absolute;
+    top: 4.7cm;
+    left: 19cm;
+    color:rgb(141, 17, 17);
+
+}
+#name{
+    position:absolute;
+    top: 5.3cm;
+    left: 3cm;
+}
+#address{
+    position:absolute;
+    top: 5.3cm;
+    left: 13.3cm;
+}
+#phone{
+    position:absolute;
+    top: 5.3cm;
+    left: 19cm;
+}
+#lists {
+    position:absolute;
+    top: 7.5cm;
+    left: 0.7cm; 
+}
+#lists span {
+   display: inline-block; 
+}
+.w-1{
+    width: 6.5cm;
+}
+.w-2{
+    width: 1.4cm;
+
+}
+.w-3{
+    width: 1.6cm;
+}
+.w-4{
+    width: 1.3cm;
+}
+.w-5{
+    width: 1.9cm;
+}
+.w-6{
+    width: 2cm;
+}
+.w-7{
+    width: 1.6cm;
+}
+.w-8{
+    width: 3.2cm;
+}
+#total_word{
+    position:absolute;
+    top:15cm;
+    left:1.8cm
+}
+#total{
+    position:absolute;
+    top:15cm;
+    left:20cm
+}
+    </style>
+  </head>
+  <body >
+    <div id="printjewellery">
+      <div class="printjewellery_wrap">
+        <div id="date"></div>
+        <div id="billno"></div>
+
+        <div id="name"></div>
+        <div id="address"></div>
+        <div id="phone"></div>
+        <div id="lists"></div>
+        <!-- <div id="amount"></div> -->
+        <div id="total"></div>
+        <div id="total_word"></div>
+
+
+         
+          
+      </div>
+    </div>
+         
+  </body>
+  <script >
+    window.addEventListener('load', () => {
+      const bc = new BroadcastChannel("test");
+        bc.onmessage = (event) => {
+          this.data = event.data;
+          let list = event.data.fiscalYear
+          let items = event.data.items
+          console.log(items,'items')
+          console.log(event.data.englishDate,'ed')
+
+
+          let lists = null;
+          document.getElementById("lists").innerHTML = ''
+          
+          document.getElementById("billno").innerHTML = `${event.data.billNo}`
+          document.getElementById("name").innerHTML = `${event.data.party_name}`
+          document.getElementById("address").innerHTML = `${event.data.address}`
+          document.getElementById("date").innerHTML = `${event.data.englishDate.toString().slice(0,15)}`
+          
+          document.getElementById("phone").innerHTML = `${event.data.phone}`
+          document.getElementById("total").innerHTML = `${event.data.total}`
+        //   document.getElementById("discount").innerHTML = `${event.data.discount}`
+          document.getElementById("total_word").innerHTML = `${event.data.word}`
+
+
+          for(let i = 0 ; i < items.length ; i++) {
+            
+            document.getElementById("lists").innerHTML +=
+            `<p><span class="w-1">${items[i].particularName}</span><span class="w-2">${items[i].ornamentType}</span><span class="w-3">${items[i].weight}</span><span class="w-4">${items[i].jarti}</span><span class="w-5">${items[i].totalWeight}</span><span class="w-6">${items[i].rate}</span><span class="w-7">${items[i].jyala}</span><span class="w-8">${items[i].patthar}</span><span class="w-9">${items[i].price}</span></p>`
+             
+          }
+        };
+
+    });
+  </script>
+</html>

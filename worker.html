@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline'" />
+    <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+    crossorigin="anonymous"
+  />
+    <title>UK Laxmi Jewellers Print</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Alumni+Sans+Collegiate+One&family=Satisfy&family=Yeseva+One&display=swap');
+      a {
+        text-decoration: none;
+    }
+    
+
+body{
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+
+}
+a {
+  text-decoration: none!important;
+}
+.pj_header {
+  display: flex;
+  justify-content: space-between;
+}
+.pjh_left {
+  width: 60%;
+  margin-bottom: 1rem;
+  margin-right: 2rem;
+}
+.pjleft_top {
+  display: flex;
+  justify-content: space-between;
+  font-size: .85rem;
+}
+.pjleft_logo {
+  display: flex;
+  justify-content: space-between;
+}
+.pjh_info {
+  border: 1.7px solid #5e4a4a;
+    padding: 0.3rem;
+    font-size: 0.7rem;
+    color: #5e4a4a;
+}
+.pj_mobile {
+    color: #5e4a4a;
+}
+.pj_darta {
+    color: #5e4a4a;
+}
+.pjh_info h5 {
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+.pjh_info ul {
+    padding-inline-start: 1.2rem;
+    list-style-type: square;
+    margin-bottom: 0.2rem;
+}
+
+.pjh_date {
+  display: flex;
+  justify-content: space-between;
+  color: #874c62;
+}
+.pj_darta p {
+    margin-bottom: 0.4rem;
+}
+.guarranty-bill {
+    background-color: #874c62;
+    height: 2.6rem;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 15px;
+    padding: 0.5rem;
+}
+
+
+p.date {
+  width: 50%;
+}
+p.billno {
+  width: 50%;
+}
+.pj_middle {
+  color: #874c62;
+  display: flex;
+}
+.pj_middle p {
+    font-size: .95rem;
+    font-weight: 500;
+}
+.pj_middle p:nth-child(1) {
+  width: 50%;
+}
+.pj_middle p:nth-child(2) {
+  width: 25%;
+}
+.pjhr_wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+div#lists {
+  height: 35vh;
+    padding: 0.3rem;
+    background-color: #f9f9f9;
+    color: #6e4d4d;
+}
+div#printjewellery {
+        padding: 1rem 0.5rem;
+      background-color: #874c62;
+      }
+.printjewellery_wrap {
+    background-color: #d3d3c9;
+    padding: 0.3rem;
+}
+.company_text {
+    font-family: 'Markazi Text', serif;
+    margin-bottom: 1rem;
+}
+.billlogo_wrap img {
+    height: 110px;
+}
+.print_nameaddress {
+    padding-top: 0.9rem;
+}
+.print_nameaddress p {
+    font-size: 0.95rem;
+    line-height: 1rem;
+    margin-bottom: 0;
+    color: #874c62;
+}
+.company_text h5 {
+  font-size: 2.1rem;
+    font-weight: 600;
+    color: #874c62;
+    line-height: 1.8rem;
+}
+.printjewellery_wrap .table_head {
+    background-color: #874c62;
+    color: #fff;
+}
+  .table_wrap {
+    border: 2px solid black;
+}
+.table_head p {
+    font-weight: 600;
+}
+.table_head p span {
+  font-size: 0.9rem;
+  text-align: center;
+
+}
+.table_total {
+    border-top: 2px solid #874c62;
+    display: flex;
+    justify-content: space-between;
+    background-color: #f7f7f7;
+    color: #874c62;
+}
+.tt_left {
+  padding: 0.5rem;
+    width: 60%;
+    border-right: 2px solid #874c62;
+    text-transform: capitalize;
+
+}
+.tt_right {
+    width: 40%;
+}
+.tt_right p , .tt_left p {
+    font-weight: 600;
+}
+.ttr_wrap {
+    border-bottom: 2px solid #874c62;
+    padding: 0.2rem;
+}
+.ttr_wrap p {
+    margin-bottom: 0.2rem;
+}
+.tt_right :last-child {
+    border: 0;
+}
+      /* .table_head {
+        background-color: red;
+      } */
+      .table_head p {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin: 0.2rem;
+        font-weight: 300;
+      }
+      div#lists p {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0rem;
+      }
+      div#lists p:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+      /* div#lists p a , .table_head a{
+        width: 24%;
+      } */
+      /* div#lists p a {
+        border-right: 2px solid #874c62;
+      } */
+      .print_header {
+        text-align: center;
+      }
+      .print_middle {
+        display: flex;
+        justify-content: space-between;
+      }
+      .pj_table {
+    background-color: #874c62;
+}
+.pj_table_wrap {
+    border: 2px solid #874c62;
+}
+
+      .w-25{
+        width: 25%;
+      }
+      .w-8 {
+        width: 8%;
+      }
+      .w-12 {
+        width: 12%;
+      }
+      
+      #lists p span {
+        text-align: center;
+        width: 8%;
+      }
+      #lists p span:nth-child(2) {
+        width: 25%;
+      }
+      #lists p span:nth-last-child(1) {
+        width: 12%;
+      }
+      .signature {
+        display: flex;
+        justify-content: flex-end;
+        color: #874c62;
+      }
+      .signature p {
+        text-align: center;
+        width: 10%;
+        font-weight: 600;
+        border-top: 2px solid #874c62;
+        margin-right: 2rem;
+        margin-top: 2rem;
+        margin-bottom: 0;
+      }
+    </style>
+  </head>
+  <body >
+    <div id="printjewellery">
+      <div class="printjewellery_wrap">
+          <div class="pj_header">
+              <div class="pjh_left">
+                  <div class="pjleft_top">
+                    <div class="pj_darta">
+                      <p>मु.अ.क.द.नं : ३०५०५९१४१  </p>
+                      <p>दर्ता नं  : १५१२/०७५/०७६</p>
+                    </div>
+                    <div class="pj_mobile">
+                      मो : ९८४५६९२३४६  <br/>
+                      ९८०७१४०६६५ 
+                    </div>
+                    <div class="guarranty-bill">
+                      ग्यारेन्टी बिल
+                    </div>
+                  </div>
+                  <div class="pjleft_logo">
+                      <div class="billlogo_wrap">
+                          <img src="./src/js/image/newlogo.jpg" />
+                      </div>
+                      <div class="print_nameaddress">
+                        <div class="company_text">
+                          <h5>U.k. लक्ष्मी ज्वेलेर्स </h5>
+                          <h5>U.k. Laxmi jewellers</h5>
+                        </div>
+                        <p>भ.न.पा.-१०, हाकिमचोक, चितवन </p>
+                        <p>UK laxmi Jewellers</p>
+                    </div>
+                  </div>
+              </div>
+              <div class="pjh_right">
+                  <div class="pjhr_wrap">
+                    <div class="pjh_info">
+                        <h5>केहि महत्वपूर्ण जानकारी </h5>
+                        <ul>
+                          <li>गरगहना फर्काउने अवस्थामा ज्याला, जर्ती र रसायन कताइ बजार भाउ अनुसार तुरुन्त गरिनेछ</li>
+                          <li>रसायन भानाले जोध्दा लाग्ने कमसल सुन बुझ्नु पर्नेछ </li>
+                          <li>ज्याला भनअले  गहना बनाउँदा खेर जाने सुन हो जुन ग्राहक वर्गले भेहोर्नु पर्नेछ </li>
+                          <li>KDM / ZINC भएको सामानमा २ % देखी ३ % सम्म काटिनेछ </li>
+                          <li>भुल्चुक लिने दिने उधारो करोबार को लागि क्षमा चाहन्छऔ </li>
+                        </ul>
+                    </div>
+                    <div class="pjh_date">
+                        <p class="date">मिती: <span id="invoice"></span></p>
+                        <p class="billno">बिल नं :  <span id="billno"></span></p>
+                    </div>
+                  </div>
+              </div>
+          </div>
+          <div class="pj_middle">
+            <p>ग्राहकको नाम: श्री <span id="name"></span> </p>
+            <p>ठेगाना: <span id="address"></span></p>
+            <p>फोन: </p>
+          </div>
+          <div class="pj_table">
+            <div class="pj_table_wrap">
+              <div class="table_head">
+                <p>
+                  <span class="w-8">SN</span>
+                  <span class="w-25">गहनाको विवरण</span>
+                  <span class="w-8">सुन/चाँदीको  किसिम</span>
+                  <span class="w-8">तौल(gram)</span>
+                  <span class="w-8">जर्ती</span>
+                  <span class="w-8">जर्ती समेतको तौल</span>
+                  <span class="w-8">rate</span>
+                  <span class="w-8">ज्याला</span>
+                  <span class="w-8">पत्थर/पोते</span>
+                  <span class="w-12">Price</span>
+                </p>
+              </div>
+              <div id="lists">
+
+              </div>
+              <div class="table_total">
+                <div class="tt_left">
+                    <p>In words: <span id="total_word"></span> only</p>
+                </div>
+                <div class="tt_right">
+                  <div class="ttr_wrap"> <p>Amount: <span id="amount"></span></p> </div>
+                  <div class="ttr_wrap"> <p>Discount: <span id="discount"></span></p> </div>
+                  <div class="ttr_wrap"> <p>Total: <span id="total"></span></p> </div>
+                </div>
+                </div>
+            
+          </div>
+
+          </div>
+          <div class="signature">
+            <p>हस्ताक्षर </p>
+          </div>
+      </div>
+        </div>
+         
+  </body>
+  <script >
+    window.addEventListener('load', () => {
+      const bc = new BroadcastChannel("test");
+        bc.onmessage = (event) => {
+          this.data = event.data;
+          let list = event.data.fiscalYear
+          let items = event.data.items
+          console.log(items,'items')
+          console.log(event.data.englishDate,'ed')
+
+
+          let lists = null;
+          document.getElementById("lists").innerHTML = ''
+          
+          document.getElementById("billno").innerHTML = `${event.data.billNo}`
+          document.getElementById("name").innerHTML = `${event.data.party_name}`
+          document.getElementById("address").innerHTML = `${event.data.address}`
+          document.getElementById("invoice").innerHTML = `${event.data.englishDate.toString().slice(0,15)}`
+          
+          document.getElementById("amount").innerHTML = `${event.data.subTotal}`
+          document.getElementById("total").innerHTML = `${event.data.total}`
+          document.getElementById("discount").innerHTML = `${event.data.discount}`
+          document.getElementById("total_word").innerHTML = `${event.data.word}`
+
+
+          for(let i = 0 ; i < items.length ; i++) {
+            
+            document.getElementById("lists").innerHTML +=
+            `<p><span>${i + 1}</span><span>${items[i].particularName}</span><span>${items[i].ornamentType}</span><span>${items[i].weight}</span><span>${items[i].jarti}</span><span>${items[i].totalWeight}</span><span>${items[i].rate}</span><span>${items[i].jyala}</span><span>${items[i].patthar}</span><span>${items[i].price}</span></p>`
+             
+          }
+        };
+
+    });
+  </script>
+</html>
